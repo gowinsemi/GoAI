@@ -41,7 +41,7 @@ INTEGRATED DEVELOPMENT ENVIRONMENT
 2. Synthesis tool  : GowinSynthesis V1.9.6.02 Beta and higher.
 3. C-code design   : ARM Keil MDK V5.24 and higher
 4. Serial debugging assistant
-5. Python 3.7
+5. Python 3.4
 ===============================================================================================================================================
 SDK STRUCTURE
 \micro_speech_sdk
@@ -55,9 +55,7 @@ SDK STRUCTURE
         \fpga                   --> FPGA fs file and posp file
             \micro_speech.fs    --> FPGA fs file
             \micro_speech.posp  --> FPGA posp file
-        \output                 --> Output
         \tf_model               --> Model tflite
-        \work                   --> Temporary working space
     \doc                        --> Documents
         \README.md              --> Read me file
     \plugins                    --> Plugins
