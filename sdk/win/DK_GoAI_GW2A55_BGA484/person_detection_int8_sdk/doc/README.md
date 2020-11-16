@@ -43,32 +43,31 @@ INTEGRATED DEVELOPMENT ENVIRONMENT
 1. RTL-code design : Gowin_V1.9.6.02Beta and higher.
 2. Synthesis tool  : GowinSynthesis V1.9.6.02Beta and higher.
 3. C-code design   : ARM Keil MDK V5.24 and higher
-4. Python 3.7
+4. Python 3.4
 ===============================================================================================================================================
 SDK STRUCTURE
 \person_detection_int8_sdk
-    \bin                        --> Executable file
-        \goai_run.bat           --> Run automatically
-        \person_detection.exe   --> Execute person_detection SDK
-    \data                       --> Input, output, model, empu_m1 and fpga design
-        \empu_m1                --> M1 c-code design
-            \empu_m1            --> M1 libaray
-            \go_ai              --> GoAI library
-        \fpga                   --> FPGA fs file and posp file
-            \person_detection.fs--> FPGA fs file
+    \bin                            --> Executable file
+        \goai_run.bat               --> Run automatically
+        \person_detection.exe       --> Execute person_detection SDK
+    \data                           --> Input, output, model, empu_m1 and fpga design
+        \empu_m1                    --> M1 c-code design
+            \empu_m1                --> M1 libaray
+            \go_ai                  --> GoAI library
+        \fpga                       --> FPGA fs file and posp file
+            \person_detection.fs    --> FPGA fs file
             \person_detection.posp  --> FPGA posp file
-        \output                 --> Output
-        \tf_model               --> Model tflite
-        \work                   --> Temporary working space
-    \doc                        --> Documents
-        \README.md              --> Read me file
-    \plugins                    --> Plugins
-        \flatc                  --> Flatc tool
-            \flatc.exe          --> Convert tflite
-            \schema.fbs         --> Schema file for flatc
-        \merge_bit              --> Merge bit tool
-            \make_loc.exe       --> Generate itcm location
-            \merge_bit.exe      --> Merge fs file and bin file
+        \output                     --> Output weight/bias and bitstream
+        \tf_model                   --> Model tflite
+    \doc                            --> Documents
+        \README.md                  --> Read me file
+    \plugins                        --> Plugins
+        \flatc                      --> Flatc tool
+            \flatc.exe              --> Convert tflite
+            \schema.fbs             --> Schema file for flatc
+        \merge_bit                  --> Merge bit tool
+            \make_loc.exe           --> Generate itcm location
+            \merge_bit.exe          --> Merge fs file and bin file
 ===============================================================================================================================================
 PERSON_DETCTION SOFTWARE DESIGN
 1. Memory settings
