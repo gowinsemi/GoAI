@@ -6,7 +6,7 @@
  * @file      command_responder.c
  * @author    Embedded Development Team
  * @version   V1.0.0
- * @date      2020-08-12 09:00:00
+ * @date      2020-11-16 09:00:00
  * @brief     command responder.
  ******************************************************************************************
  */
@@ -33,25 +33,25 @@ void command_responder(const char* found_command, bool is_new_command)
 		{
 			//silence
 			printf("MICRO_SPEECH : SILENCE.\r\n");
-			GPIO_WriteBits(GPIO0,0xE);
+			GPIO_WriteBits(GPIO0,0x3E);
 		}
 		else if(strcmp(found_command,micro_speech_lable[1])==0)
 		{
 			//unknown
 			printf("MICRO_SPEECH : UNKNOWN.\r\n");
-			GPIO_WriteBits(GPIO0,0xD);
+			GPIO_WriteBits(GPIO0,0x3D);
 		}
 		else if(strcmp(found_command,micro_speech_lable[2])==0)
 		{
 			//yes
 			printf("MICRO_SPEECH : YES.\r\n");
-			GPIO_WriteBits(GPIO0,0xB);
+			GPIO_WriteBits(GPIO0,0x3B);
 		}
 		else if(strcmp(found_command,micro_speech_lable[3])==0)
 		{
 			//no
 			printf("MICRO_SPEECH : NO.\r\n");
-			GPIO_WriteBits(GPIO0,0x7);
+			GPIO_WriteBits(GPIO0,0x37);
 		}
   }
 }

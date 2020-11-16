@@ -6,7 +6,7 @@
  * @file      audio_provider.c
  * @author    Embedded Development Team
  * @version   V1.0.0
- * @date      2020-09-01 09:00:00
+ * @date      2020-11-16 09:00:00
  * @brief     Audio provider.
  ******************************************************************************************
  */
@@ -19,66 +19,64 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Declarations ---------------------------------------------------------- */
-int16_t g_audio_capture_buffer[kAudioSampleFrequency] = {0};	//audio capture
-int16_t g_audio_output_buffer[kMaxAudioSampleSize] = {0};			//audio samples
-
-volatile int32_t g_latest_audio_timestamp = 0;								//audio timestamp
+/* Variables ---------------------------------------------------------- */
+int16_t recording_buffer[kMaxAudioSampleSize] = {0};		//audio capture data
+volatile uint32_t recording_length = kMaxAudioSampleSize;	//audio capture data number
+int16_t g_dummy_audio_data[kMaxAudioSampleSize] = {0};		//audio spectrogram
+volatile uint32_t audio_timestamp_ms = 0;					//time stamp
 
 /* Functions ---------------------------------------------------------- */
-//capture audio.
+//capture raw audio data.
 void audio_capture(void)
 {
 	//Audio capture in GoAI_55C board.
 	//Microphone is adafruit board.
 	uint32_t* vi_buf = (uint32_t *) AHB2PERIPH_BASE;
 	uint32_t* vi_en = (uint32_t *) (AHB2PERIPH_BASE + 0x400000);
-
+	*vi_en = 0x01;
+	
 	while(!(0x2&(*vi_en)));
 	
-	for(uint32_t i=0;i<16000;i++)
+	for(uint32_t i=0;i<recording_length;i++)
 	{
-		*(g_audio_capture_buffer+i) = *(vi_buf);
+		*(recording_buffer+i) = *(vi_buf);
 	}
-	
-	*vi_en = 0x0;
 }
 
 //get audio samples.
 void GetAudioSamples(int start_ms, int duration_ms, int* audio_samples_size, int16_t** audio_samples)
 {
-	//Audio capture in GoAI_55C board.
-	// This next part should only be called when the main thread notices that the
-  // latest audio sample data timestamp has changed, so that there's new data
-  // in the capture ring buffer. The ring buffer will eventually wrap around and
-  // overwrite the data, but the assumption is that the main thread is checking
-  // often enough and the buffer is large enough that this call will be made
-  // before that happens.
+  const int start_sample = start_ms * (kAudioSampleFrequency / 1000);
+  uint32_t curr_audio_start_sample = audio_timestamp_ms * (kAudioSampleFrequency / 1000);
+  uint32_t curr_audio_end_sample = curr_audio_start_sample+recording_length;
+ 
+  for (int i = 0; i < kMaxAudioSampleSize; ++i)
+  {
+    const int32_t sample_index = start_sample + i;
+    int16_t sample;
 
-  // Determine the index, in the history of all samples, of the first
-  // sample we want
-  const int start_offset = start_ms * (kAudioSampleFrequency / 1000);
-	
-  // Determine how many samples we want in total
-  const int duration_sample_count = duration_ms * (kAudioSampleFrequency / 1000);
-	
-  for(int i = 0; i < duration_sample_count; ++i)
-	{
-    // For each sample, transform its index in the history of all samples into
-    // its index in g_audio_capture_buffer
-    const int capture_index = (start_offset + i) % kAudioSampleFrequency;
-		
-    // Write the sample to the output buffer
-    g_audio_output_buffer[i] = g_audio_capture_buffer[capture_index];
+    if((sample_index < 0) || (sample_index < curr_audio_start_sample)) 
+    {
+      sample = 0;
+    }
+    else if(sample_index >= curr_audio_end_sample)
+    {
+      sample = 0;
+    }
+    else
+    {
+      sample = recording_buffer[sample_index-curr_audio_start_sample];
+    }
+    
+    g_dummy_audio_data[i] = sample;
   }
-
-  // Set pointers to provide access to the audio
+  
   *audio_samples_size = kMaxAudioSampleSize;
-  *audio_samples = g_audio_output_buffer;
+  *audio_samples = g_dummy_audio_data;
 }
 
 int32_t LatestAudioTimestamp(void) 
 {
-  g_latest_audio_timestamp += 100;//100ms is a slice.
-  return g_latest_audio_timestamp;
+  audio_timestamp_ms += 30;
+  return audio_timestamp_ms;
 }

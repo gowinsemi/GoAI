@@ -56,6 +56,7 @@ SDK STRUCTURE
             \micro_speech.fs    --> FPGA fs file
             \micro_speech.posp  --> FPGA posp file
         \tf_model               --> Model tflite
+        \output                 --> Weight/bias and bitstream
     \doc                        --> Documents
         \README.md              --> Read me file
     \plugins                    --> Plugins

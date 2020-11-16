@@ -6,7 +6,7 @@
  * @file      helper.c
  * @author    Embedded Development Team
  * @version   V1.0.0
- * @date      2020-07-15 09:00:00
+ * @date      2020-11-16 09:00:00
  * @brief     initialized peripherals.
  ******************************************************************************************
  */
@@ -34,8 +34,8 @@ const char* micro_speech_lable[MICRO_STATUS] =
 void setup(void)
 {
     SystemClockInit();						//Initialize system clock
-    UartInit();										//Initialize UART0
-    GPIOInit();										//Initialize GPIO
+    UartInit();								//Initialize UART0
+    GPIOInit();								//Initialize GPIO
 }
 
 //Initialize system clock
@@ -87,7 +87,7 @@ static void GPIOInit(void)
 
 	GPIO_Init(GPIO0,&GPIO_InitType);
 
-	GPIO_WriteBits(GPIO0,0x30);
+	GPIO_WriteBits(GPIO0,0x00);//low level
 }
 
 void delay_ms(uint32_t delay_ms)
