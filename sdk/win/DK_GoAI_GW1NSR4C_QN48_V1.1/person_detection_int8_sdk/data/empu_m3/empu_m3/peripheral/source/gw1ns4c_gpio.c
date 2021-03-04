@@ -1,12 +1,12 @@
 /*
  * *****************************************************************************************
  *
- * 		Copyright (C) 2014-2019 Gowin Semiconductor Technology Co.,Ltd.
+ * 		Copyright (C) 2014-2021 Gowin Semiconductor Technology Co.,Ltd.
  * 		
  * @file        gw1ns4c_gpio.c
  * @author      Embedded Development Team
- * @version     V1.0.0
- * @date        2019-10-1 09:00:00
+ * @version     V1.x.x
+ * @date        2021-01-01 09:00:00
  * @brief       This file contains all the functions prototypes for the GPIO firmware library.
  ******************************************************************************************
  */
@@ -95,11 +95,11 @@ void GPIO_Init(GPIO_TypeDef* GPIOx,GPIO_InitTypeDef* GPIO_InitStruct)
   /* Set GPIO Mode registers */
   if(GPIO_Mode == GPIO_Mode_IN)
   {
-    GPIOx->OUTENCLR |= GPIO_Pin;
+    GPIOx->OUTENSET &= (~GPIO_Pin);//Clear Out Enable
   }
   else if(GPIO_Mode == GPIO_Mode_OUT)
   {
-    GPIOx->OUTENSET |= GPIO_Pin;
+    GPIOx->OUTENSET |= GPIO_Pin;//Set Out Enable
   }
   else if(GPIO_Mode == GPIO_Mode_AF)
   {
