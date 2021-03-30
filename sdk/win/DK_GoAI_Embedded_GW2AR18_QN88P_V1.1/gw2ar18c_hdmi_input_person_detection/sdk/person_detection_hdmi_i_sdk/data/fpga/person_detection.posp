@@ -1,0 +1,45 @@
+//Copyright (C)2014-2021 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-Place file
+//GOWIN Version: V1.9.7.02Beta
+//Part Number: GW2AR-LV18QN88PC8/I7
+//Device: GW2AR-18C
+//Created Time: Mon Mar 29 11:05:12 2021
+
+u_frame_buffer/dp_inst_0 PLACE_BSRAM_R46[5]
+u_frame_buffer/dp_inst_1 PLACE_BSRAM_R46[6]
+u_frame_buffer/dp_inst_2 PLACE_BSRAM_R46[7]
+u_frame_buffer/dp_inst_3 PLACE_BSRAM_R46[8]
+u_frame_buffer/dp_inst_4 PLACE_BSRAM_R46[9]
+u_frame_buffer/dp_inst_5 PLACE_BSRAM_R28[9]
+u_frame_buffer/dp_inst_6 PLACE_BSRAM_R46[10]
+u_frame_buffer/dp_inst_7 PLACE_BSRAM_R28[10]
+u_frame_buffer/dp_inst_8 PLACE_BSRAM_R46[11]
+u_frame_buffer/dp_inst_9 PLACE_BSRAM_R28[11]
+u_frame_buffer/dp_inst_10 PLACE_BSRAM_R46[12]
+u_frame_buffer/dp_inst_11 PLACE_BSRAM_R28[12]
+u_frame_buffer/dp_inst_12 PLACE_BSRAM_R46[13]
+u_frame_buffer/dp_inst_13 PLACE_BSRAM_R28[13]
+u_frame_buffer/dp_inst_14 PLACE_BSRAM_R46[14]
+u_frame_buffer/dp_inst_15 PLACE_BSRAM_R46[15]
+ib_inst/sdpb_inst_0 PLACE_BSRAM_R46[2]
+ib_inst/sdpb_inst_1 PLACE_BSRAM_R46[3]
+ib_inst/sdpb_inst_2 PLACE_BSRAM_R46[4]
+ib_inst/sdpb_inst_3 PLACE_BSRAM_R28[8]
+ib_inst/sdpb_inst_4 PLACE_BSRAM_R46[1]
+ins_m1/M1_inst/u_CortexM1Integration/u_dtcm/mem3_mem3_0_0_s PLACE_BSRAM_R28[0]
+ins_m1/M1_inst/u_CortexM1Integration/u_dtcm/mem2_mem2_0_0_s PLACE_BSRAM_R10[0]
+ins_m1/M1_inst/u_CortexM1Integration/u_dtcm/mem1_mem1_0_0_s PLACE_BSRAM_R28[1]
+ins_m1/M1_inst/u_CortexM1Integration/u_dtcm/mem0_mem0_0_0_s PLACE_BSRAM_R10[1]
+ins_m1/M1_inst/u_CortexM1Integration/u_itcm/mem3_mem3_0_0_s PLACE_BSRAM_R28[2]
+ins_m1/M1_inst/u_CortexM1Integration/u_itcm/mem2_mem2_0_0_s PLACE_BSRAM_R10[2]
+ins_m1/M1_inst/u_CortexM1Integration/u_itcm/mem1_mem1_0_0_s PLACE_BSRAM_R28[3]
+ins_m1/M1_inst/u_CortexM1Integration/u_itcm/mem0_mem0_0_0_s PLACE_BSRAM_R10[3]
+EDID_PROM_Top_inst/i2c_slave_wrapper_inst/edid_ram_inst/mem_mem_0_0_s PLACE_BSRAM_R28[7]
+u_text_overlay/font_rom_font_rom_0_0_s PLACE_BSRAM_R28[4]
+Scaler_Top_inst/scaler_wrapper_inst/scaler_core_inst/video_outbuf_inst/bram_inst0_pp0/bram_sdp_0 PLACE_BSRAM_R46[0]
+Scaler_Top_inst/scaler_wrapper_inst/scaler_core_inst/video_outbuf_inst/bram_inst0_pp1/bram_sdp_0 PLACE_BSRAM_R28[6]
+Scaler_Top_inst/scaler_wrapper_inst/scaler_core_inst/ver_calc_wrapper_inst/ver_calcdata_gen_inst/loop1[0].bram_inst0/bram_sdp_0 PLACE_BSRAM_R28[5]
+Scaler_Top_inst/scaler_wrapper_inst/scaler_core_inst/ver_calc_wrapper_inst/ver_calcdata_gen_inst/loop1[1].bram_inst0/bram_sdp_0 PLACE_BSRAM_R10[6]
+Scaler_Top_inst/scaler_wrapper_inst/scaler_core_inst/ver_calc_wrapper_inst/ver_calcdata_gen_inst/loop1[2].bram_inst0/bram_sdp_0 PLACE_BSRAM_R10[7]
+Scaler_Top_inst/scaler_wrapper_inst/scaler_core_inst/ver_calc_wrapper_inst/ver_calcdata_gen_inst/loop1[3].bram_inst0/bram_sdp_0 PLACE_BSRAM_R10[8]
