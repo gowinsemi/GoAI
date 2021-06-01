@@ -1,0 +1,40 @@
+//Copyright (C)2014-2021 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-Place file
+//GOWIN Version: V1.9.7.05Beta
+//Part Number: GW2AR-LV18QN88PC8/I7
+//Device: GW2AR-18C
+//Created Time: Mon May 24 10:21:42 2021
+
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem3_mem3_0_0_s PLACE_BSRAM_R28[0]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem3_mem3_0_1_s PLACE_BSRAM_R28[1]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem3_mem3_0_2_s PLACE_BSRAM_R10[1]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem3_mem3_0_3_s PLACE_BSRAM_R28[2]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem2_mem2_0_0_s PLACE_BSRAM_R10[2]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem2_mem2_0_1_s PLACE_BSRAM_R28[3]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem2_mem2_0_2_s PLACE_BSRAM_R46[2]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem2_mem2_0_3_s PLACE_BSRAM_R10[3]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem1_mem1_0_0_s PLACE_BSRAM_R28[4]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem1_mem1_0_1_s PLACE_BSRAM_R46[3]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem1_mem1_0_2_s PLACE_BSRAM_R10[4]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem1_mem1_0_3_s PLACE_BSRAM_R28[5]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem0_mem0_0_0_s PLACE_BSRAM_R28[6]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem0_mem0_0_1_s PLACE_BSRAM_R28[7]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem0_mem0_0_2_s PLACE_BSRAM_R28[8]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_dtcm/mem0_mem0_0_3_s PLACE_BSRAM_R28[9]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem3_mem3_0_0_s PLACE_BSRAM_R10[0]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem3_mem3_0_1_s PLACE_BSRAM_R46[0]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem3_mem3_0_2_s PLACE_BSRAM_R46[1]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem3_mem3_0_3_s PLACE_BSRAM_R46[4]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem2_mem2_0_0_s PLACE_BSRAM_R10[5]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem2_mem2_0_1_s PLACE_BSRAM_R46[5]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem2_mem2_0_2_s PLACE_BSRAM_R10[6]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem2_mem2_0_3_s PLACE_BSRAM_R46[6]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem1_mem1_0_0_s PLACE_BSRAM_R10[7]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem1_mem1_0_1_s PLACE_BSRAM_R46[7]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem1_mem1_0_2_s PLACE_BSRAM_R10[8]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem1_mem1_0_3_s PLACE_BSRAM_R46[8]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem0_mem0_0_0_s PLACE_BSRAM_R28[10]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem0_mem0_0_1_s PLACE_BSRAM_R28[11]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem0_mem0_0_2_s PLACE_BSRAM_R28[12]
+u_Gowin_EMPU_M1_Top/M1_inst/u_CortexM1Integration/u_itcm/mem0_mem0_0_3_s PLACE_BSRAM_R28[13]
