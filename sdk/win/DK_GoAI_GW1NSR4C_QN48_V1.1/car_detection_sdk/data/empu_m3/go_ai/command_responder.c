@@ -14,6 +14,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "gw1ns4c.h"
 #include "command_responder.h"
+#include <stdbool.h>
+
+/* Variables ------------------------------------------------------------------*/
+bool run_flag = false;
 
 /* Functions ------------------------------------------------------------------*/
 void command_responder(int8_t* image)
@@ -21,18 +25,28 @@ void command_responder(int8_t* image)
 	//GoAI running indicator
 	//image[0] : no car
 	//image[1] : car
-	//led2 on : car
-	//led2 off : no car
+	//led3 on : car
+	//led3 off : no car
 	if (image[0]<image[1])
 	{
 		//car
-		GPIO_ResetBit(GPIO0, GPIO_Pin_0);//led2 on
-		UART_SendString(UART0,"Car Detected.\r\n");
+		GPIO_ResetBit(GPIO0, GPIO_Pin_1);//led3 on
 	}
-  else
+	else
 	{
 		//no car
-		GPIO_SetBit(GPIO0, GPIO_Pin_0);//led2 off
-		UART_SendString(UART0,"No Car Detected.\r\n");
+		GPIO_SetBit(GPIO0, GPIO_Pin_1);//led3 off
 	}
+
+	//system running indicator
+	//led2
+	if(run_flag)
+	{
+		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
+	}
+	else
+	{
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+	}
+	run_flag = !run_flag;
 }

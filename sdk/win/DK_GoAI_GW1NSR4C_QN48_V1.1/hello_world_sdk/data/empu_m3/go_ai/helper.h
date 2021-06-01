@@ -15,7 +15,6 @@
 #define HELPER_H_
 
 /* Declarations ------------------------------------------- */
-void SystemClockInit(void);
 void GPIOInit(void);
 
 #endif

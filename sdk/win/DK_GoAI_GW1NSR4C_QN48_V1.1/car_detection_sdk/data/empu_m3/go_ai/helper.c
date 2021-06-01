@@ -21,38 +21,23 @@ void GPIOInit(void)
 {
 	GPIO_InitTypeDef GPIO_InitType;
 	
-	GPIO_InitType.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitType.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
 	GPIO_InitType.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitType.GPIO_Int = GPIO_Int_Disable;
 
 	GPIO_Init(GPIO0,&GPIO_InitType);
 
-  GPIO_ResetBit(GPIO0, GPIO_Pin_0);		//initializes LED2 off
-}
-
-//Initialize UART0
-void UartInit(void)
-{
-	UART_InitTypeDef UART_InitStruct;
-	
-	UART_InitStruct.UART_Mode.UARTMode_Tx = ENABLE;
-	UART_InitStruct.UART_Mode.UARTMode_Rx = ENABLE;
-	UART_InitStruct.UART_Int.UARTInt_Tx = DISABLE;
-	UART_InitStruct.UART_Int.UARTInt_Rx = DISABLE;
-	UART_InitStruct.UART_Ovr.UARTOvr_Tx = DISABLE;
-	UART_InitStruct.UART_Ovr.UARTOvr_Rx = DISABLE;
-	UART_InitStruct.UART_Hstm = DISABLE;
-	UART_InitStruct.UART_BaudRate = 115200;//Baud Rate
-	
-	UART_Init(UART0,&UART_InitStruct);
+	//initializes led on
+	GPIO_ResetBit(GPIO0, GPIO_Pin_0);
+	GPIO_ResetBit(GPIO0, GPIO_Pin_1);
 }
 
 //Initializes I2C
 void I2CInit(void)
 {
-	static const	unsigned char i2c_data[462] = 
-	{
-		0xFF, 0x01, 
+  static const unsigned char i2c_data[462] =
+  {
+    0xFF, 0x01,
     0x12, 0x80,
     0xFF, 0x00,
     0x2c, 0xff,
@@ -282,13 +267,13 @@ void I2CInit(void)
     0xDA, 0x08,
     0xD7, 0x03,
     0xE1, 0x77,
-		0xE0, 0x00
-	};
+    0xE0, 0x00
+  };
 			 
-	I2C_Init(I2C,100);	//Initializes I2C
+  I2C_Init(I2C,100);	//Initializes I2C
 	
-	for(int i=0;i<462;i=i+2)
-	{
-		I2C_SendByte(I2C,0x30,i2c_data[i],i2c_data[i+1]);
-	}	
+  for(int i=0;i<462;i=i+2)
+  {
+    I2C_SendByte(I2C,0x30,i2c_data[i],i2c_data[i+1]);
+  }
 }
