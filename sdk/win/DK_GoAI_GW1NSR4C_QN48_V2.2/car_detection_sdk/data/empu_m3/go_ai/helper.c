@@ -30,16 +30,16 @@ void GPIOInit(void)
 
 	GPIO_Init(GPIO0,&GPIO_InitType);
 
-  GPIO_SetBit(GPIO0, GPIO_Pin_0);		//initializes LED2 on
-	delay_ms(100);										//delay 100ms until system is stable
+	GPIO_SetBit(GPIO0, GPIO_Pin_0);		//initializes LED2 on
+	delay_ms(100);						//delay 100ms until system is stable
 }
 
 //Initializes I2C
 void I2CInit(void)
 {
-	static const	unsigned char i2c_data[462] = 
+	static const unsigned char i2c_data[462] =
 	{
-		0xFF, 0x01, 
+	0xFF, 0x01,
     0x12, 0x80,
     0xFF, 0x00,
     0x2c, 0xff,
@@ -269,7 +269,7 @@ void I2CInit(void)
     0xDA, 0x08,
     0xD7, 0x03,
     0xE1, 0x77,
-		0xE0, 0x00
+	0xE0, 0x00
 	};
 			 
 	I2C_Init(I2C,100);	//Initializes I2C

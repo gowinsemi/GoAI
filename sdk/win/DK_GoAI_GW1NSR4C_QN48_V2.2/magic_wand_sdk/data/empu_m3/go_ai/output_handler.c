@@ -31,47 +31,39 @@ void output_handler(int kind)
 	if(kind == 0)
 	{
 		//Wing
-		GPIO_WriteBits(GPIO0,0x1);
-    Delay_ms(BLINK_DLY);
-		UART_SendString(UART0, "Wing\n");
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
 	}
 	else if(kind == 1)
 	{
 		//Ring
-		GPIO_WriteBits(GPIO0,0x1);
-    Delay_ms(BLINK_DLY);
-    GPIO_WriteBits(GPIO0,0x0);
-    Delay_ms(BLINK_DLY);
-    GPIO_WriteBits(GPIO0,0x1);
-    Delay_ms(BLINK_DLY);
-		UART_SendString(UART0, "Ring\n");
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
+		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
 	}
 	else if(kind == 2)
 	{
 		//Slope
-		GPIO_WriteBits(GPIO0,0x1);
-    Delay_ms(BLINK_DLY);
-    GPIO_WriteBits(GPIO0,0x0);
-    Delay_ms(BLINK_DLY);
-    GPIO_WriteBits(GPIO0,0x1);
-    Delay_ms(BLINK_DLY);
-    GPIO_WriteBits(GPIO0,0x0);
-    Delay_ms(BLINK_DLY);
-    GPIO_WriteBits(GPIO0,0x1);
-    Delay_ms(BLINK_DLY);    
-		UART_SendString(UART0, "Slope\n");
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
+		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
+		GPIO_ResetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
+		GPIO_SetBit(GPIO0, GPIO_Pin_0);
+		Delay_ms(BLINK_DLY);
 	}
 	else if(kind == 3)
 	{
 		//Unknown
-		UART_SendString(UART0, "Unknown\n");
-	}
-	else
-	{
-		UART_SendString(UART0, "No Detection\n");
 	}
 	
-  GPIO_WriteBits(GPIO0,0x0);
+	GPIO_ResetBit(GPIO0, GPIO_Pin_0);
 }
 
 //delay ms

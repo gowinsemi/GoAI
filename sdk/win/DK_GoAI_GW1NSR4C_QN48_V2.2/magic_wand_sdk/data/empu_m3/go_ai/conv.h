@@ -34,7 +34,7 @@ typedef struct
   uint8_t filter_width;
   uint8_t filter_height;
   uint8_t filter_out_depth;
-	uint8_t filter_in_depth;
+  uint8_t filter_in_depth;
   uint8_t output_width;
   uint8_t output_height;
   uint8_t output_depth;

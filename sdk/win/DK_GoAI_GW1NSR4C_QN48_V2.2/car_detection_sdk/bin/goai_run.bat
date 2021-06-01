@@ -2,22 +2,16 @@
 
 echo.
 echo ----------------------------------------------------------------------------------
-echo          COPYRIGHT (C) 2014-2020 GOWIN SEMICONDUCTOR TECHNOLOGY CO.,LTD.
+echo          COPYRIGHT (C) 2014-2021 GOWIN SEMICONDUCTOR TECHNOLOGY CO.,LTD.
 echo                             ALL RIGHTS RESERVED.
 echo ----------------------------------------------------------------------------------
 echo.
 
 
-set tflite_model_file=D:\user-bak\Users\root\Desktop\car_detection_sdk\data\tf_model\car_detection.tflite
-set gowin_programmer_path=D:\user-bak\Users\root\Desktop\car_detection_sdk\plugins\programmer
-set keil_path=C:/Keil_v5
+set tflite_model_file=F:\car_detection_sdk\data\tf_model\car_detection.tflite
+set programmer_cli_path=D:\Gowin\Gowin_V1.9.7.05Beta\Programmer\bin
+set gmd_cli_path=C:\GMD\toolchain\ARM_toolchain\bin
 
-echo.
-echo GOAI CAR_DETECTION BEGINNING...
-
-call car_detection.exe --device GW1NSR4C --tflite_model_file %tflite_model_file% --gowin_programmer_path %gowin_programmer_path% --keil_path %keil_path%
-
-echo.
-echo GOAI CAR_DETECTION BUILD DONE!
+call car_detection.exe --device GW1NSR4C --tflite_model_file %tflite_model_file% --programmer_cli_path %programmer_cli_path% --gmd_cli_path %gmd_cli_path% --training_type tf
 
 pause

@@ -15,8 +15,6 @@
 #define GOAI_HELPER_H_
 
 /* Declarations ------------------------------------------------------------------*/
-void SystemClockInit(void);	//Initializes System Clock
 void GPIOInit(void);				//Initializes GPIO
-void UartInit(void);				//Initializes UART 
 
 #endif

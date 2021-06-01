@@ -20,7 +20,7 @@
 /* Definitions ------------------------------------------------------------------------ */
 typedef struct
 {
-  uint8_t batches;
+	uint8_t batches;
 	uint8_t depth;//input/output depth
 	uint8_t input_height;
 	uint8_t input_width;

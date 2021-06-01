@@ -15,8 +15,7 @@
 */
 
 #include <stdint.h>
-#include <math.h>
-#include <stdio.h> 
+#include <stdio.h>
 
 #define LSM9DS1_ADDRESS            0x6b
 

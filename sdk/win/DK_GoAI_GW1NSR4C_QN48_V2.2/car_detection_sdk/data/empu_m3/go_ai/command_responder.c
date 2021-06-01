@@ -21,6 +21,7 @@ void command_responder(int8_t* image)
 	//GoAI running indicator
 	//image[0] : no car
 	//image[1] : car
+
 	//led2 on : car
 	//led2 off : no car
 	if (image[0]<image[1])
@@ -28,7 +29,7 @@ void command_responder(int8_t* image)
 		//car
 		GPIO_SetBit(GPIO0, GPIO_Pin_0);//led2 on
 	}
-  else
+	else
 	{
 		//no car
 		GPIO_ResetBit(GPIO0, GPIO_Pin_0);//led2 off

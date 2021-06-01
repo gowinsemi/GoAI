@@ -1,5 +1,5 @@
 
-//GowinSemiconductor Technology Co.,Ltd GoAI:Car Detection Demo!
+//GowinSemiconductor Technology Co.,Ltd GoAI2.0:Car Detection!
 //Auto Generate Tflite Model Car Detection Parameters Header File!
 
 #ifndef TFLITE_CAR_DETECTION_PARAMETERS_H_
@@ -10,7 +10,7 @@
 
 /* Parameters ------------------------------------------------*/
 //DepthwiseConv2D/Conv2D/AreragePool2D Layers
-const int STAGES = 28;
+#define STAGES 28
 
 const uint8_t DEPTHWISE [STAGES] = {1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0};
 const uint16_t DILATION_FACTOR_HEIGHT [STAGES] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};

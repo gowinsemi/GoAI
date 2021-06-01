@@ -16,10 +16,9 @@
 
 /* Includes ------------------------------------------------------------------------ */
 #include <stdint.h>
-#include <stdbool.h>
 
 /* Declarations ------------------------------------------------------------------------ */
 void setup_accelerometer(void);
-bool read_accelerometer(float* input, int length);
+uint8_t read_accelerometer(float* input, int length);
 
 #endif
